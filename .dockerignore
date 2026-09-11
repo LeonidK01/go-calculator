@@ -1,0 +1,5 @@
+bin
+native/rust/target
+coverage.out
+.git
+*.prof

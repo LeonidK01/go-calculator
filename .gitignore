@@ -1,0 +1,4 @@
+/bin/
+/native/rust/target/
+/coverage.out
+*.prof

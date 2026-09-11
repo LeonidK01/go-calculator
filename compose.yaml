@@ -1,0 +1,14 @@
+services:
+  calculator:
+    build: .
+    ports:
+      - "8080:8080"
+    stop_grace_period: 45s
+    init: true
+  generator:
+    build: .
+    profiles: [load]
+    entrypoint: ["/app/generator"]
+    command: ["--url", "http://calculator:8080/calc", "--threads", "16", "--interval", "0", "--duration", "60"]
+    depends_on: [calculator]
+    init: true
